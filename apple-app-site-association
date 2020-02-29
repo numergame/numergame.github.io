@@ -3,7 +3,7 @@
         "apps": [],
         "details": [{
             "appID": "E9N2P75B9W.com.stepbystep.numer",
-            "paths": ["/*"]
+            "paths": ["/shared/*"]
         }]
     }
 }
