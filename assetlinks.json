@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.stepbystep.nbrm",
+    "sha256_cert_fingerprints":
+    ["65:98:B1:D6:88:17:29:17:A4:55:DD:E6:28:30:B2:AA:86:F4:71:9A:FF:A1:C1:AC:0C:72:8F:29:03:61:C4:87", "04:BE:D2:E3:8B:3E:87:4A:58:77:5C:0D:95:D8:87:45:0F:2F:AA:23:AB:CA:A5:F9:C4:0A:6B:4D:09:AF:1F:2E"]
+  }
+}]
