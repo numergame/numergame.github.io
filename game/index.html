@@ -5,8 +5,8 @@
               <meta http-equiv="content-type" content="text/html; charset=UTF-8">
               <link href="img/favicon.ico" rel="icon">
               <link href="css/styles.css" rel="stylesheet" type="text/css">
-              <script src="soundmanager2-setup.js"></script>
-  			  <script src="soundmanager2-jsmin.js"></script>
+              <script src="html/soundmanager2-setup.js"></script>
+  			  <script src="html/soundmanager2-jsmin.js"></script>
        </head>
 
        <body>
@@ -29,5 +29,36 @@
 
               document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
               document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+
+              function getCanvas() {
+                     var canvases = document.getElementById('embed-html').getElementsByTagName('canvas');
+                     if (canvases.length === 0) {
+                            return undefined;
+                     } else {
+                            return canvases[0];
+                     }
+              }
+
+              // FIXME: Find another way to handle event of canvas rendered.
+              function initCanvas() {
+                     var canvas = getCanvas();
+                     if (canvas) {
+                            // It is to call reScale() method of GWT application.
+                            if (window.document.documentMode) {
+                                   // if IE
+                                   var resizeEvent = window.document.createEvent('UIEvents');
+                                   resizeEvent.initUIEvent('resize', true, false, window, 0);
+                                   window.dispatchEvent(resizeEvent);
+                            } else {
+                                   window.dispatchEvent(new Event('resize'));
+                            }
+                     } else {
+                            setTimeout(function () {
+                                   initCanvas();
+                            }, 100);
+                     }
+              }
+
+              initCanvas();
        </script>
 </html>
