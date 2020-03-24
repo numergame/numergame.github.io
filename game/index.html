@@ -1,64 +1,236 @@
 <!doctype html>
 <html>
-       <head>
-              <title>Numer</title>
-              <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-              <link href="img/favicon.ico" rel="icon">
-              <link href="css/styles.css" rel="stylesheet" type="text/css">
-              <script src="html/soundmanager2-setup.js"></script>
-  			  <script src="html/soundmanager2-jsmin.js"></script>
-       </head>
 
-       <body>
-              <div id="embed-html"></div>
-              <script type="text/javascript" src="html/html.nocache.js"></script>
-       </body>
+<head>
+    <title>Numer</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="open-iconic/font/css/open-iconic.css" rel="stylesheet">
 
-       <script>
-              function handleMouseDown(evt) {
-                     evt.preventDefault();
-                     evt.stopPropagation();
-                     evt.target.style.cursor = 'default';
-              }
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-              function handleMouseUp(evt) {
-                     evt.preventDefault();
-                     evt.stopPropagation();
-                     evt.target.style.cursor = '';
-              }
+    <link href="img/favicon.ico" rel="icon">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="html/soundmanager2-setup.js"></script>
+    <script src="html/soundmanager2-nodebug-jsmin.js"></script>
+    <script src="bowser/2.7.0/bowser.min.js"></script>
+    <script>
+        function getBrowser() {
+            var result = bowser.getParser(window.navigator.userAgent);
+            return result.parsedResult.browser.name;
+        }
+    </script>
+</head>
 
-              document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
-              document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+<body id="body">
 
-              function getCanvas() {
-                     var canvases = document.getElementById('embed-html').getElementsByTagName('canvas');
-                     if (canvases.length === 0) {
-                            return undefined;
-                     } else {
-                            return canvases[0];
-                     }
-              }
+<div id="header" class="container">
+    <div class="row align-items-center">
+        <div class="col-md">
+            <h6></h6>
+            <h6 class="text-center">
+                <a href="#Numer">Numer</a> is available for
+                <a href="#Appstore">iOS</a> and
+                <a href="#GooglePlay">Android</a>
+            </h6>
+            <h6></h6>
+        </div>
+    </div>
+</div>
 
-              // FIXME: Find another way to handle event of canvas rendered.
-              function initCanvas() {
-                     var canvas = getCanvas();
-                     if (canvas) {
-                            // It is to call reScale() method of GWT application.
-                            if (window.document.documentMode) {
-                                   // if IE
-                                   var resizeEvent = window.document.createEvent('UIEvents');
-                                   resizeEvent.initUIEvent('resize', true, false, window, 0);
-                                   window.dispatchEvent(resizeEvent);
-                            } else {
-                                   window.dispatchEvent(new Event('resize'));
-                            }
-                     } else {
-                            setTimeout(function () {
-                                   initCanvas();
-                            }, 100);
-                     }
-              }
+<div id="embed-html"></div>
 
-              initCanvas();
-       </script>
+<div id="footer" class="container">
+    <div class="row align-items-center">
+        <div class="col-md text-center">
+            <button id="infoBtn" type="button" class="btn btn-default" data-toggle="modal" data-target="#infoModal">
+                <span class="oi" data-glyph="info" title="info" aria-hidden="true"></span>
+            </button>
+            <button id="refreshBtn" type="button" class="btn btn-default">
+                <span class="oi" data-glyph="reload" title="reload" aria-hidden="true"></span>
+            </button>
+            <button id="volumeBtn" type="button" class="btn btn-default">
+                <span class="oi" data-glyph="volume-high" title="volume" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <h3 class="col-md"></h3>
+    </div>
+
+    <script type="text/javascript" src="html/html.nocache.js"></script>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalTitle">Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="successModalText">Congratulations! You have solved the puzzle successfully! If you want to share solution you can copy the link above:</p>
+                <input id="successModalInput" onfocus="this.select();" type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="modal-footer">
+                <button id="successModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                <button id="successModalCopyBtn" type="button" class="btn btn-primary copy-btn" data-clipboard-target="#successModalInput"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="noMovesModal" tabindex="-1" role="dialog" aria-labelledby="noMovesModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noMovesModalTitle">Title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="noMovesModalText">Congratulations! You have solved the puzzle successfully! If you want to share solution you can copy the link above:</p>
+            </div>
+            <div class="modal-footer">
+                <button id="noMovesModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                <button id="noMovesModalRefreshBtn" type="button" class="btn btn-primary copy-btn" data-clipboard-target="#successModalInput"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalTitle">Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="infoModalText">
+                Here should be explained how to play this very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very cool game.
+            </div>
+            <div class="modal-footer">
+                <button id="infoModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/clipboard.min.js"></script>
+
+</body>
+
+<script>
+    function handleMouseDown(evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        evt.target.style.cursor = 'default';
+    }
+
+    function handleMouseUp(evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        evt.target.style.cursor = '';
+    }
+
+    document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
+    document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+
+    new ClipboardJS('.copy-btn');
+
+    function getHeaderHeight() {
+        return document.getElementById("header").offsetHeight;
+    }
+
+    function getFooterHeight() {
+        return document.getElementById("footer").offsetHeight;
+    }
+
+    function getCanvasWidth() {
+        return window.innerWidth;
+    }
+
+    function getCanvasHeight() {
+        return window.innerHeight - getHeaderHeight() - getFooterHeight();
+    }
+
+    function showSuccessModal(title,
+                              text,
+                              link,
+                              copyText,
+                              closeText) {
+        var h5 = document.getElementById("successModalTitle");
+        h5.textContent = title;
+        var p = document.getElementById("successModalText");
+        p.textContent = text;
+        var input = document.getElementById("successModalInput");
+        input.value = link;
+        var copyBtn = document.getElementById("successModalCopyBtn");
+        copyBtn.textContent = copyText;
+        var closeBtn = document.getElementById("successModalCloseBtn");
+        closeBtn.textContent = closeText;
+        $("#successModal").modal("show");
+    }
+
+    function showNoMovesModal(title,
+                              text,
+                              refreshText,
+                              closeText) {
+        var h5 = document.getElementById("noMovesModalTitle");
+        h5.textContent = title;
+        var p = document.getElementById("noMovesModalText");
+        p.textContent = text;
+        var refreshBtn = document.getElementById("noMovesModalRefreshBtn");
+        refreshBtn.textContent = refreshText;
+        var closeBtn = document.getElementById("noMovesModalCloseBtn");
+        closeBtn.textContent = closeText;
+        $("#noMovesModal").modal("show");
+    }
+
+    $('#refreshBtn').click(function (e) {
+        raiseRefresh();
+    });
+
+    $('#noMovesModalRefreshBtn').click(function (e) {
+        raiseRefresh();
+        $("#noMovesModal").modal("hide");
+    });
+
+    function actualizeSound(enabled) {
+        var span = $('#volumeBtn').find('span')[0];
+        var value = 'volume-off';
+        if (enabled === true) {
+            value = 'volume-high';
+        }
+        span.setAttribute('data-glyph', value);
+    }
+
+    $('#volumeBtn').click(function (e) {
+        var attrName = 'data-glyph';
+        var span = $(this).find('span')[0];
+        var dataGlyph = span.getAttribute(attrName);
+        var offValue = 'volume-off';
+        var onValue = 'volume-high';
+        if (dataGlyph === onValue) {
+            enableSound(false);
+            dataGlyph = offValue;
+        } else if (dataGlyph === offValue) {
+            enableSound(true);
+            dataGlyph = onValue;
+        }
+        span.setAttribute(attrName, dataGlyph);
+    });
+</script>
+
 </html>
