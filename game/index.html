@@ -22,12 +22,17 @@
             var result = bowser.getParser(window.navigator.userAgent);
             return result.parsedResult.browser.name;
         }
+
+        function getBrowserDevice() {
+            var result = bowser.getParser(window.navigator.userAgent);
+            return result.parsedResult.platform.type;
+        }
     </script>
 </head>
 
 <body id="body">
 
-<div id="header" class="container">
+<div id="header" class="d-none container">
     <div class="row align-items-center">
         <div class="col-md">
             <h6></h6>
@@ -41,9 +46,16 @@
     </div>
 </div>
 
-<div id="embed-html"></div>
+<div id="embed-html" class="d-none"></div>
+<div id="loaderModal" class="modal" style="background-color: #ffffff;">
+    <div id="loader" class="hidden justify-content-center d-flex">
+        <div class="spinner-border" role="status" style="margin-top: auto; margin-bottom: auto;">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>
 
-<div id="footer" class="container">
+<div id="footer" class="d-none container">
     <div class="row align-items-center">
         <div class="col-md text-center">
             <button id="infoBtn" type="button" class="btn btn-default" data-toggle="modal" data-target="#infoModal">
@@ -66,7 +78,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="successModalTitle">Title</h5>
@@ -87,7 +99,7 @@
 </div>
 
 <div class="modal fade" id="noMovesModal" tabindex="-1" role="dialog" aria-labelledby="noMovesModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="noMovesModalTitle">Title</h5>
@@ -107,7 +119,7 @@
 </div>
 
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="infoModalTitle">Info</h5>
@@ -125,6 +137,30 @@
     </div>
 </div>
 
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="messageModalText">
+            </div>
+            <div class="modal-footer">
+                <button id="messageModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
 <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/clipboard.min.js"></script>
@@ -132,6 +168,24 @@
 </body>
 
 <script>
+    function showLoader() {
+        var loader = document.getElementById("loader");
+        var header = document.getElementById("header");
+        var game = document.getElementById("embed-html");
+        var footer = document.getElementById("footer");
+        loader.style.height = window.innerHeight + 'px';
+        $("#loaderModal").modal("show");
+        $(header).removeClass("d-none");
+        $(game).removeClass("d-none");
+        $(footer).removeClass("d-none");
+    }
+
+    function hideLoader() {
+        $("#loaderModal").modal("hide");
+    }
+
+    showLoader();
+
     function handleMouseDown(evt) {
         evt.preventDefault();
         evt.stopPropagation();
@@ -198,6 +252,18 @@
         $("#noMovesModal").modal("show");
     }
 
+    function showMessageModal(title,
+                              text,
+                              closeText) {
+        var h5 = document.getElementById("messageModalTitle");
+        h5.textContent = title;
+        var p = document.getElementById("messageModalText");
+        p.textContent = text;
+        var closeBtn = document.getElementById("messageModalCloseBtn");
+        closeBtn.textContent = closeText;
+        $("#messageModal").modal("show");
+    }
+
     $('#refreshBtn').click(function (e) {
         raiseRefresh();
     });
@@ -207,10 +273,12 @@
         $("#noMovesModal").modal("hide");
     });
 
-    function actualizeSound(enabled) {
+    function actualizeSound(supported, enabled) {
         var span = $('#volumeBtn').find('span')[0];
         var value = 'volume-off';
-        if (enabled === true) {
+        if (supported === false) {
+            $('#volumeBtn').prop('disabled', true);
+        } else if (enabled === true) {
             value = 'volume-high';
         }
         span.setAttribute('data-glyph', value);

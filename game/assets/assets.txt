@@ -13,8 +13,8 @@ t:fonts/troika/freefont_license.txt:1181:text/plain
 b:fonts/troika/troika.otf:39680:application/unknown
 b:fonts/troika/troika.ttf:48180:application/unknown
 d:i18n:0:application/unknown
-b:i18n/NbrmBundle_en.properties:5297:application/unknown
-b:i18n/NbrmBundle_ru.properties:9313:application/unknown
+b:i18n/NbrmBundle_en.properties:5328:application/unknown
+b:i18n/NbrmBundle_ru.properties:9369:application/unknown
 d:PersonalizedAdConsent.bundle:0:application/unknown
 b:PersonalizedAdConsent.bundle/consentform.html:28931:text/html
 d:polygons:0:application/unknown
