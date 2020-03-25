@@ -2,15 +2,11 @@
 <html>
 
 <head>
-    <title>Numer</title>
+    <title data-i18n="play-title"></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="open-iconic/font/css/open-iconic.css" rel="stylesheet">
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="img/favicon.ico" rel="icon">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -37,8 +33,8 @@
         <div class="col-md">
             <h6></h6>
             <h6 class="text-center">
-                <a href="#Numer">Numer</a> is available for
-                <a href="#Appstore">iOS</a> and
+                <a href="/">Numer</a> <span data-i18n="is-available-for"></span> 
+                <a href="#Appstore">iOS</a> <span data-i18n="and"></span> 
                 <a href="#GooglePlay">Android</a>
             </h6>
             <h6></h6>
@@ -81,18 +77,18 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="successModalTitle">Title</h5>
+                <h5 data-i18n="success" class="modal-title" id="successModalTitle">Title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p id="successModalText">Congratulations! You have solved the puzzle successfully! If you want to share solution you can copy the link above:</p>
+                <p data-i18n="success-text" id="successModalText">Congratulations! You have solved the puzzle successfully! If you want to share solution you can copy the link above:</p>
                 <input id="successModalInput" onfocus="this.select();" type="text" class="form-control" id="recipient-name">
             </div>
             <div class="modal-footer">
-                <button id="successModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
-                <button id="successModalCopyBtn" type="button" class="btn btn-primary copy-btn" data-clipboard-target="#successModalInput"></button>
+                <button data-i18n="close" id="successModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                <button data-i18n="copy" id="successModalCopyBtn" type="button" class="btn btn-primary copy-btn" data-clipboard-target="#successModalInput"></button>
             </div>
         </div>
     </div>
@@ -102,17 +98,17 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="noMovesModalTitle">Title</h5>
+                <h5 data-i18n="no-moves" class="modal-title" id="noMovesModalTitle">Title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p id="noMovesModalText">Congratulations! You have solved the puzzle successfully! If you want to share solution you can copy the link above:</p>
+                <p data-i18n="no-moves-text" id="noMovesModalText">Congratulations! You have solved the puzzle successfully! If you want to share solution you can copy the link above:</p>
             </div>
             <div class="modal-footer">
-                <button id="noMovesModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
-                <button id="noMovesModalRefreshBtn" type="button" class="btn btn-primary copy-btn" data-clipboard-target="#successModalInput"></button>
+                <button data-i18n="close" id="noMovesModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                <button data-i18n="refresh" id="noMovesModalRefreshBtn" type="button" class="btn btn-primary copy-btn" data-clipboard-target="#successModalInput"></button>
             </div>
         </div>
     </div>
@@ -122,16 +118,21 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="infoModalTitle">Info</h5>
+                <h5 data-i18n="how-to-play" class="modal-title" id="infoModalTitle"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="infoModalText">
-                Here should be explained how to play this very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very cool game.
+                <p data-i18n="how-to-play-text-1"></p>
+                <p data-i18n="how-to-play-text-2"></p>
+                <p data-i18n="how-to-play-text-3"></p>
+                <p data-i18n="how-to-play-text-4"></p>
+                <p data-i18n="how-to-play-text-5"></p>
+                <p data-i18n="how-to-play-text-6"></p>
             </div>
             <div class="modal-footer">
-                <button id="infoModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button data-i18n="close" id="infoModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -141,33 +142,84 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="messageModalTitle"></h5>
+                <h5 data-i18n="invalid-link" class="modal-title" id="messageModalTitle"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="messageModalText">
+            <div data-i18n="invalid-link-text" class="modal-body" id="messageModalText">
             </div>
             <div class="modal-footer">
-                <button id="messageModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                <button data-i18n="close" id="messageModalCloseBtn" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="d-flex justify-content-center">
-    <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
-
-<script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/clipboard.min.js"></script>
+
+<script type="text/javascript" src="js/localization/localization.js"></script>
+
+<script type="text/javascript" src="js/localization/jquery.i18n.js"></script>
+<script type="text/javascript" src="js/localization/jquery.i18n.messagestore.js"></script>
+<script type="text/javascript" src="js/localization/jquery.i18n.fallbacks.js"></script>
+<script type="text/javascript" src="js/localization/jquery.i18n.parser.js"></script>
+<script type="text/javascript" src="js/localization/jquery.i18n.emitter.js"></script>
+<script type="text/javascript" src="js/localization/jquery.i18n.language.js"></script>
+<script type="text/javascript" src="js/localization/languages/ru.js"></script>
 
 </body>
 
 <script>
+    var isLocalized = false;
+
+    $(document).ready(function() {
+        'use strict';
+
+        $(window).resize(function (e) {
+            handleResize();
+        });
+
+        showLoader();
+        $('#volumeBtn').prop('disabled', true);
+
+        initI18n('./js/localization/', function() {
+            isLocalized = true;
+        });
+
+        document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
+        document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+        
+        new ClipboardJS('.copy-btn');
+
+        $('#refreshBtn').click(function (e) {
+            raiseRefresh();
+        });
+        
+        $('#noMovesModalRefreshBtn').click(function (e) {
+            raiseRefresh();
+            $("#noMovesModal").modal("hide");
+        });
+
+        $('#volumeBtn').click(function (e) {
+            var attrName = 'data-glyph';
+            var span = $(this).find('span')[0];
+            var dataGlyph = span.getAttribute(attrName);
+            var offValue = 'volume-off';
+            var onValue = 'volume-high';
+            if (dataGlyph === onValue) {
+                enableSound(false);
+                dataGlyph = offValue;
+            } else if (dataGlyph === offValue) {
+                enableSound(true);
+                dataGlyph = onValue;
+            }
+            span.setAttribute(attrName, dataGlyph);
+        });
+    });
+    
     function showLoader() {
         var loader = document.getElementById("loader");
         var header = document.getElementById("header");
@@ -181,10 +233,15 @@
     }
 
     function hideLoader() {
-        $("#loaderModal").modal("hide");
+        if (isLocalized === true) {
+            $("#loaderModal").modal("hide");
+            handleResize();
+        } else {
+            setTimeout(function() {
+                hideLoader();
+            }, 100);
+        }
     }
-
-    showLoader();
 
     function handleMouseDown(evt) {
         evt.preventDefault();
@@ -197,11 +254,6 @@
         evt.stopPropagation();
         evt.target.style.cursor = '';
     }
-
-    document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
-    document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
-
-    new ClipboardJS('.copy-btn');
 
     function getHeaderHeight() {
         return document.getElementById("header").offsetHeight;
@@ -219,86 +271,33 @@
         return window.innerHeight - getHeaderHeight() - getFooterHeight();
     }
 
-    function showSuccessModal(title,
-                              text,
-                              link,
-                              copyText,
-                              closeText) {
-        var h5 = document.getElementById("successModalTitle");
-        h5.textContent = title;
-        var p = document.getElementById("successModalText");
-        p.textContent = text;
+    function showSuccessModal(link) {
         var input = document.getElementById("successModalInput");
         input.value = link;
-        var copyBtn = document.getElementById("successModalCopyBtn");
-        copyBtn.textContent = copyText;
-        var closeBtn = document.getElementById("successModalCloseBtn");
-        closeBtn.textContent = closeText;
         $("#successModal").modal("show");
     }
 
-    function showNoMovesModal(title,
-                              text,
-                              refreshText,
-                              closeText) {
-        var h5 = document.getElementById("noMovesModalTitle");
-        h5.textContent = title;
-        var p = document.getElementById("noMovesModalText");
-        p.textContent = text;
-        var refreshBtn = document.getElementById("noMovesModalRefreshBtn");
-        refreshBtn.textContent = refreshText;
-        var closeBtn = document.getElementById("noMovesModalCloseBtn");
-        closeBtn.textContent = closeText;
+    function showNoMovesModal() {
         $("#noMovesModal").modal("show");
     }
 
-    function showMessageModal(title,
-                              text,
-                              closeText) {
-        var h5 = document.getElementById("messageModalTitle");
-        h5.textContent = title;
-        var p = document.getElementById("messageModalText");
-        p.textContent = text;
-        var closeBtn = document.getElementById("messageModalCloseBtn");
-        closeBtn.textContent = closeText;
+    function showInvalidLinkModal() {
         $("#messageModal").modal("show");
     }
-
-    $('#refreshBtn').click(function (e) {
-        raiseRefresh();
-    });
-
-    $('#noMovesModalRefreshBtn').click(function (e) {
-        raiseRefresh();
-        $("#noMovesModal").modal("hide");
-    });
 
     function actualizeSound(supported, enabled) {
         var span = $('#volumeBtn').find('span')[0];
         var value = 'volume-off';
         if (supported === false) {
             $('#volumeBtn').prop('disabled', true);
-        } else if (enabled === true) {
-            value = 'volume-high';
+        } else {
+            $('#volumeBtn').prop('disabled', false);
+            if (enabled === true) {
+                value = 'volume-high';
+            }
         }
         span.setAttribute('data-glyph', value);
     }
-
-    $('#volumeBtn').click(function (e) {
-        var attrName = 'data-glyph';
-        var span = $(this).find('span')[0];
-        var dataGlyph = span.getAttribute(attrName);
-        var offValue = 'volume-off';
-        var onValue = 'volume-high';
-        if (dataGlyph === onValue) {
-            enableSound(false);
-            dataGlyph = offValue;
-        } else if (dataGlyph === offValue) {
-            enableSound(true);
-            dataGlyph = onValue;
-        }
-        span.setAttribute(attrName, dataGlyph);
-    });
 </script>
 
 </html>
