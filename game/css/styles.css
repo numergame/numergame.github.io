@@ -34,6 +34,28 @@ ul.simple-list {
     padding-inline-start: 0px;
 }
 
+/* 
+workaround for known Edge and IE defect:
+https://github.com/twbs/bootstrap/issues/22489
+*/
+.modal-content.fix-ie {
+    background-clip: border-box;
+    border: none !important;
+}
+
+.sample {
+    margin-bottom: 1rem;
+}
+
+.sample pre code {
+    outline: 0;
+    font-size: 1.5em;
+}
+
+.line-length-0 {
+    line-height: 0;
+}
+
 div.logo-row {
     padding-left: .4rem;
     max-width: 5rem;
