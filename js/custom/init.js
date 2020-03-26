@@ -1,15 +1,16 @@
 $(document).ready(function($) {
     'use strict'
 
-    var mainContainer = document.getElementById('mainContainer');
-    if (mainContainer.scrollHeight > mainContainer.offsetHeight) {
-        $(mainContainer).find('.row').removeClass('h-100');
-    }
-
     showLoader();
+
+    handleResize();
 
     initI18n('./game/js/localization/', function() {
         hideLoader();
+    });
+
+    $(window).resize(function (e) {
+        handleResize();
     });
 });
 
@@ -21,4 +22,14 @@ function showLoader() {
 
 function hideLoader() {
     $("#loaderModal").modal("hide");
+}
+
+function handleResize() {
+    var mainContainer = document.getElementById('mainContainer');
+    var row = $(mainContainer).find(".row").first();
+    if (mainContainer.scrollHeight > mainContainer.offsetHeight) {
+        row.removeClass('h-100');
+    } else {
+        row.addClass('h-100');
+    }
 }
