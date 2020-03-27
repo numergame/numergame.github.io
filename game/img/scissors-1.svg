@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="scissors-1" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="200.0"
+    height="200.0"
+    version="1.1"
+    viewBox="0 0 200.0 200.0">
+
+    <path d="M3.5 11.677932 L196.5 3.0 L196.5 119.86282 L119.30001 120.78847 L119.30001 196.99998 L80.7 196.61432 L80.7 121.2513 L3.5 122.17694 Z M80.7 45.888268 L42.1 47.1996 L42.1 84.45686 L80.7 83.569786 Z M157.9 43.265606 L119.30001 44.57694 L119.30001 82.6827 L157.9 81.79562 Z"
+        fill="#ebebeb"
+        stroke="#000000"
+        stroke-linecap="square"
+        stroke-width="6.0"
+        stroke-linejoin="miter"/>
+
+</svg>

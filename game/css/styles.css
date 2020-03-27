@@ -45,6 +45,21 @@ https://github.com/twbs/bootstrap/issues/22489
 
 .sample {
     margin-bottom: 1rem;
+    margin-right: 3rem;
+    max-width: 10rem;;
+}
+
+.structure {
+    max-width: 4.5rem;
+    padding: .8rem;
+}
+
+.sample.short-sample {
+    max-width: 6rem;
+}
+
+.sample.row {
+    margin-left: 0;
 }
 
 .sample pre code {

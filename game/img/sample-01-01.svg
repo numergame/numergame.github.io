@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="sample-01-01" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="780.0"
+    height="190.0"
+    version="1.1"
+    viewBox="0 0 780.0 190.0">
+
+    <svg x="0" width="140" height="190">
+        <path d="M113.456436 5.467995 L116.86114 178.5979 L60.36203 182.05157 L60.294422 61.60225 L26.428642 78.474396 L20.543053 32.197723 L61.07788 7.4853935 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="170" width="120" height="190">
+        <path d="M110.554184 77.21755 L110.93003 107.23302 L5.5816784 109.385864 L5.50451 80.91185 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="320" width="140" height="190">
+        <path d="M7.6429896 6.8140345 L104.1249 5.420126 L116.389534 16.723225 L123.86449 81.60233 L68.67487 133.04955 L129.47595 127.57019 L130.50471 178.54521 L8.188978 182.07918 L6.939906 135.37543 L70.044655 73.58078 L68.815674 53.30857 L9.780947 57.771152 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="490" width="120" height="190">
+        <path d="M110.554184 77.21755 L110.93003 107.23302 L5.5816784 109.385864 L5.50451 80.91185 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="640" width="140" height="190">
+        <path d="M116.80662 5.4201856 L124.21083 43.731987 L87.69585 79.87501 L123.11773 96.5147 L128.96509 173.5144 L19.327007 182.07892 L12.420492 136.7272 L76.41918 131.11124 L74.607155 114.58788 L35.01693 105.997284 L35.114998 75.92935 L65.14969 51.4003 L9.64601 53.81834 L8.433657 8.409691 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+</svg>

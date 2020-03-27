@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="subtract" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="90.0"
+    height="190.0"
+    version="1.1"
+    viewBox="0 0 90.0 190.0">
+
+    <path d="M82.13271 81.93856 L82.408775 103.98532 L5.0290203 105.56661 L4.972339 84.65207 Z"
+        fill="#ebebeb"
+        stroke="#000000"
+        stroke-linecap="square"
+        stroke-width="7.0"
+        stroke-linejoin="miter"/>
+
+</svg>

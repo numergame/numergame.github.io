@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="plus-0" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="200.0"
+    height="200.0"
+    version="1.1"
+    viewBox="0 0 200.0 200.0">
+
+    <path d="M80.600006 5.9100018 L119.40002 4.1640015 L119.40002 80.83281 L197.00002 79.04801 L197.00002 118.236015 L119.40002 119.16721 L119.40002 195.836 L80.600006 195.44801 L80.600006 119.63282 L3.0 120.56402 L3.0 83.51001 L80.600006 81.72521 Z"
+        fill="#ebebeb"
+        stroke="#000000"
+        stroke-linecap="square"
+        stroke-width="6.0"
+        stroke-linejoin="miter"/>
+
+</svg>

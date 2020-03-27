@@ -1,0 +1,15 @@
+<svg id="divide" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="120.0"
+    height="190.0"
+    version="1.1"
+    viewBox="0 0 120.0 190.0">
+
+    <path d="M88.71719 37.135433 L110.86116 54.649582 L35.545174 150.2091 L14.760559 133.35439 Z"
+        fill="#ebebeb"
+        stroke="#000000"
+        stroke-linecap="square"
+        stroke-width="7.0"
+        stroke-linejoin="miter"/>
+
+</svg>

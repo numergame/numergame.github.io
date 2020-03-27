@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="network-3x3-0" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="200.0"
+    height="200.0"
+    version="1.1"
+    viewBox="0 0 200.0 200.0">
+
+    <path d="M4.0 11.643564 L196.0 3.0 L196.0 197.0 L4.0 195.07921 Z M80.8 45.718414 L42.4 47.024555 L42.4 84.13426 L80.8 83.250694 Z M157.6 43.10614 L119.20001 44.41228 L119.20001 82.36713 L157.6 81.48357 Z M80.8 120.782974 L42.4 121.243965 L42.4 158.35367 L80.8 158.31525 Z M157.6 119.861 L119.20001 120.32198 L119.20001 158.27684 L157.6 158.23842 Z"
+        fill="#ebebeb"
+        stroke="#000000"
+        stroke-linecap="square"
+        stroke-width="6.0"
+        stroke-linejoin="miter"/>
+
+</svg>

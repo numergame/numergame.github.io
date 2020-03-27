@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="sample-02-02" 
+    xmlns="http://www.w3.org/2000/svg"
+    width="780.0"
+    height="270.0"
+    version="1.1"
+    viewBox="0 0 780.0 270.0">
+
+    <svg x="250" width="90" height="190" viewBox="0 0 90 190">
+        <path d="M82.13271 81.93856 L82.408775 103.98532 L5.0290203 105.56661 L4.972339 84.65207 Z"
+            fill="#c8eeff"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="320" width="140" height="190" viewBox="0 0 140 190">
+        <path d="M113.456436 5.467995 L116.86114 178.5979 L60.36203 182.05157 L60.294422 61.60225 L26.428642 78.474396 L20.543053 32.197723 L61.07788 7.4853935 Z"
+            fill="#c8eeff"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="490" width="120" height="190" viewBox="0 0 120 190">
+        <path d="M110.554184 77.21755 L110.93003 107.23302 L5.5816784 109.385864 L5.50451 80.91185 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg x="640" width="140" height="190" viewBox="0 0 140 190">
+        <path d="M116.80662 5.4201856 L124.21083 43.731987 L87.69585 79.87501 L123.11773 96.5147 L128.96509 173.5144 L19.327007 182.07892 L12.420492 136.7272 L76.41918 131.11124 L74.607155 114.58788 L35.01693 105.997284 L35.114998 75.92935 L65.14969 51.4003 L9.64601 53.81834 L8.433657 8.409691 Z"
+            fill="#ebebeb"
+            stroke="#000000"
+            stroke-linecap="square"
+            stroke-width="7.0"
+            stroke-linejoin="miter"/>
+    </svg>
+
+</svg>
