@@ -280,6 +280,10 @@
         $(window).resize(function (e) {
             handleResize();
         });
+        
+        window.addEventListener("orientationchange", function() {
+            handleResize();
+        }, false);
 
         showLoader();
 
